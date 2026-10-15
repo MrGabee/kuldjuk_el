@@ -1,6 +1,6 @@
 name: Fájlküldés
 
-# A fajlkuldo/index.html oldal indítja. A fájlok titkosítva, egyetlen
+# Az index.html oldal indítja. A fájlok titkosítva, egyetlen
 # git blobként érkeznek (nem kerülnek commitba), a címzett és a tárgy is
 # a titkosított csomagban van, így a nyilvános naplókban nem látszanak.
 run-name: Fájlküldés ${{ inputs.azonosito }}
@@ -41,4 +41,4 @@ jobs:
           EMAIL_NEV: ${{ vars.EMAIL_NEV }}
           SMTP_HOST: ${{ vars.SMTP_HOST }}
           SMTP_PORT: ${{ vars.SMTP_PORT }}
-        run: python fajlkuldo/kuldo.py
+        run: python kuldo.py
