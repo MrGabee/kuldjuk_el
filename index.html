@@ -130,12 +130,13 @@
 <script>
   // A küldést a repó GitHub Actions workflow-ja végzi (.github/workflows/fajlkuldo.yml),
   // az e-mail fiók adatai a repó secretjeiben vannak, az oldal nem látja őket.
-  // A repót az oldal címéből számoljuk ki (kozles.github.io/kuldjuk_el/ -> kozles/kuldjuk_el),
-  // így átnevezés után sem kell átírni.
+  // A repót az oldal címéből számoljuk ki: kozles.github.io -> kozles/kozles.github.io,
+  // kozles.github.io/valami/ -> kozles/valami. Így átnevezés után sem kell átírni.
   var REPO = (function () {
     var m = location.hostname.match(/^([^.]+)\.github\.io$/);
+    if (!m) return 'kozles/kozles.github.io';
     var resz = location.pathname.split('/').filter(Boolean)[0];
-    return m && resz ? m[1] + '/' + resz : 'kozles/kuldjuk_el';
+    return m[1] + '/' + (resz && !/\.html$/.test(resz) ? resz : m[1] + '.github.io');
   })();
   var WORKFLOW = 'fajlkuldo.yml';
   var AG = 'master';
