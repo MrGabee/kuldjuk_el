@@ -5,7 +5,10 @@ Weboldal, ahol megadod a címzettet, a tárgyat, csatolsz egy vagy több fájlt,
 a repó GitHub Actions workflow-ja küldi el SMTP-n, a te e-mail fiókodból
 (Gmail App Password).
 
-Oldal: `https://mrgabee.github.io/kuldjuk_el/fajlkuldo/`
+Oldal: `https://kozle.github.io/kuldjuk_el/fajlkuldo/`
+
+Az oldal a saját címéből tudja, melyik repóba küldjön, ezért átnevezés vagy
+áthelyezés után sem kell a kódot módosítani.
 
 ## Hogyan működik
 
@@ -34,7 +37,7 @@ Nem kötelező **változók** (ugyanott, a Variables fülön): `EMAIL_NEV` (fela
 
 **GitHub token az oldalhoz:** github.com → Settings → Developer settings →
 Fine-grained tokens → Generate new token. Repository access: csak a
-`MrGabee/kuldjuk_el`; Permissions → `Contents`: Read and write, `Actions`: Read and write.
+`kozle/kuldjuk_el`; Permissions → `Contents`: Read and write, `Actions`: Read and write.
 
 Az oldalon a **Beállítások** alatt add meg a tokent és a `FAJLKULDO_KULCS`-ot.
 Ezek csak abban a böngészőben tárolódnak. Aki küldeni akar az oldalról, annak
